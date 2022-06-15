@@ -53,15 +53,19 @@ function generatePassword(){
   }if(numbersArr){
     choiceArr = choiceArr.concat(numbersArr);
   }
-  for(var i = 0; i < characters.length; i++){
-    characters = math.floor(math.random) *characters.length;
-  characters += choiceArr;
+  for(var i = 0; i < characters; i++){
+    choiceArr(math.floor(math.random)) *choiceArr.length;
+ choiceArr += characters
+ 
   
 
   }
+  alert("hello");
+  
 
 
 }
+
 
 
 
@@ -78,6 +82,7 @@ function generatePassword(){
    var passwordText = document.querySelector("#password");
 
    passwordText.value = password;
+   
  
 
  }
