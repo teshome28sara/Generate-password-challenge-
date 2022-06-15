@@ -54,36 +54,23 @@ function generatePassword(){
     choiceArr = choiceArr.concat(numbersArr);
   }
   for(var i = 0; i < characters; i++){
-    choiceArr(math.floor(math.random)) *choiceArr.length;
- choiceArr += characters
- 
+    characters = Math.floor(Math.random()* choiceArr.length)
+  choiceArr += characters;
   
 
   }
-  alert("hello");
+  // // Write password to the #password input
+ function writePassword() {
+  var passwordText = document.querySelector("#password");
+  var password = generatePassword();
   
+
+  passwordText.value = password;
 
 
 }
+writePassword();
 
 
 
-
-
-
-
-
-
-
-
-// // Write password to the #password input
- function writePassword() {
-   var password = generatePassword();
-   var passwordText = document.querySelector("#password");
-
-   passwordText.value = password;
-   
- 
-
- }
-
+}
