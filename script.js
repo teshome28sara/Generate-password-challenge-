@@ -1,8 +1,12 @@
 var generateBtn = document.querySelector("#generate");
 var isAnswer = true;
+var specialCharacterArr ="!,@,#,$,%,^,&,*,(,)";
+var lowerCaseArr = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,r,s,t,u,v,w,x,y,z";
+var upperCaseArr = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,YZ";
+var numbersArr =  "1234567890";
 
 
-generateBtn.addEventListener("click" , () => {
+function generatePassword(){
    characterLength = parseInt(prompt("how many characters would you like for your password?(8 - 128 "));
   if(isNaN(characterLength ) || characterLength< 8 || characterLength > 128){
     alert("character  length must be a number, and must be 8 - 128, please try again");
@@ -25,17 +29,25 @@ generateBtn.addEventListener("click" , () => {
      }else{
       return true;;
      }
-    });
-
-
-      var specialCharacterArr ="!,@,#,$,%,^,&,*,(,)";
-  var lowerCaseArr = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,r,s,t,u,v,w,x,y,z";
-  var upperCaseArr = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,YZ";
-  var numbersArr =  "1234567890";
-
-  function generatePassword(){
-    var options ="".concat(specialCharacterArr,upperCaseArr,numbersArr,lowerCaseArr);
     
+
+
+     
+
+ 
+    var options ="";
+    if(specialCharacterArr){
+      var options = options.concat(specialCharacterArr)
+    }
+    if(numbersArr){
+      options = options.concat(numbersArr)
+    }
+    if(upperCaseArr){
+      options = options.concat(upperCaseArr)
+    }
+    if(lowerCaseArr){
+      options = options.concat(lowerCaseArr)
+    }
     var passwordLength = characterLength;
     var newPassword = "";
     for(var i = 0; i < passwordLength; i++){
@@ -52,10 +64,10 @@ generateBtn.addEventListener("click" , () => {
                var passwordText = document.querySelector("#password");
         
             passwordText.value = password
-               generatePassword();
-               passwordText.value = newPassword;
+               
         
              }
+             generateBtn.addEventListener('click', writePassword);
 
   
 
@@ -70,4 +82,14 @@ generateBtn.addEventListener("click" , () => {
 
 
 
+
+    
+   
+   
+   
+   
+   
+   
+   
+   
 
