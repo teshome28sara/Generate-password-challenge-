@@ -26,9 +26,8 @@ function generatePassword(){
       answer2 && answer3 !== isAnswer){
         alert(" must choose at least one character set ");
      return false;
-     }else{
-      return true;;
      }
+      
     
 
 
@@ -36,16 +35,16 @@ function generatePassword(){
 
  
     var options ="";
-    if(specialCharacterArr){
+    if(answer1){
       var options = options.concat(specialCharacterArr)
     }
-    if(numbersArr){
+    if(answer0){
       options = options.concat(numbersArr)
     }
-    if(upperCaseArr){
+    if(answer2){
       options = options.concat(upperCaseArr)
     }
-    if(lowerCaseArr){
+    if(answer3){
       options = options.concat(lowerCaseArr)
     }
     var passwordLength = characterLength;
