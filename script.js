@@ -1,9 +1,9 @@
 var generateBtn = document.querySelector("#generate");
 var isAnswer = true;
-var specialCharacterArr ="!,@,#,$,%,^,&,*,(,)";
-var lowerCaseArr = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,r,s,t,u,v,w,x,y,z";
-var upperCaseArr = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,YZ";
-var numbersArr =  "1234567890";
+var specialCharacterArr ="'!','@', '#', '$' , '%', '^', '&', '*',";
+var lowerCaseArr = "'a', 'b' , 'c' , 'd' , 'e' , 'f' , 'g' , 'h' , 'i' , 'j' , 'k' , 'l', 'm' , 'n' , 'o' , 'p', 'q' , 'r' , 's' , 't' , 'u' , 'v' , 'x' , 'y' , 'z'";
+var upperCaseArr = "'A' , 'B', 'C' , 'D' , 'E' , 'F' , 'G' , 'H' , 'I' , 'J' , 'K' , 'L' , 'M' , 'k' , 'l' , 'M' , 'N' , 'P', 'U' , 'V' , 'W' , 'X' , 'Y' , 'Z'";
+ var numbersArr =  "1234567890";
 
 
 function generatePassword(){
@@ -16,14 +16,14 @@ function generatePassword(){
 
       }
     else{
-     var answer0 =  confirm("would you like numbers in the password?")
+     var isNumbers =  confirm("would you like numbers in the password?")
     
-    var answer1 = confirm("would you like symbols in the password?");
-    var answer2 = confirm("would you like uppercase letters in the password?");
-    var answer3 = confirm("would you like lowercase letters in the password?");
+    var isSymbols = confirm("would you like symbols in the password?");
+    var isUpperCase = confirm("would you like uppercase letters in the password?");
+    var isLowerCase = confirm("would you like lowercase letters in the password?");
     }
-    if(answer0 && answer1 &&
-      answer2 && answer3 !== isAnswer){
+    if(isNumbers && isSymbols &&
+      isUpperCase && isLowerCase !== isAnswer){
         alert(" must choose at least one character set ");
      return false;
      }
@@ -35,22 +35,22 @@ function generatePassword(){
 
  
     var options ="";
-    if(answer1){
+    if(isSymbols){
       var options = options.concat(specialCharacterArr)
     }
-    if(answer0){
+    if(isNumbers){
       options = options.concat(numbersArr)
     }
-    if(answer2){
+    if(isUpperCase){
       options = options.concat(upperCaseArr)
     }
-    if(answer3){
+    if(isLowerCase){
       options = options.concat(lowerCaseArr)
     }
     var passwordLength = characterLength;
     var newPassword = "";
     for(var i = 0; i < passwordLength; i++){
-            options = (Math.floor(Math.random()*options.length));
+            options = (Math.floor(Math.random()*newPassword.length));
             newPassword += options;
            }
          return newPassword;
@@ -75,20 +75,3 @@ function generatePassword(){
   
 
      
-     
-    
-    
-
-
-
-
-    
-   
-   
-   
-   
-   
-   
-   
-   
-
