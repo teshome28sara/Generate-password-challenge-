@@ -1,9 +1,12 @@
 var generateBtn = document.querySelector("#generate");
 var isAnswer = true;
-var specialCharacterArr ="'!','@', '#', '$' , '%', '^', '&', '*',";
-var lowerCaseArr = "'a', 'b' , 'c' , 'd' , 'e' , 'f' , 'g' , 'h' , 'i' , 'j' , 'k' , 'l', 'm' , 'n' , 'o' , 'p', 'q' , 'r' , 's' , 't' , 'u' , 'v' , 'x' , 'y' , 'z'";
-var upperCaseArr = "'A' , 'B', 'C' , 'D' , 'E' , 'F' , 'G' , 'H' , 'I' , 'J' , 'K' , 'L' , 'M' , 'k' , 'l' , 'M' , 'N' , 'P', 'U' , 'V' , 'W' , 'X' , 'Y' , 'Z'";
- var numbersArr =  "1234567890";
+var specialCharacterArr =['!','@', '#', '$' , '%', '^', '&', '*',];
+var lowerCaseArr = ['a', 'b' , 'c' , 'd' , 'e' , 'f' , 'g' , 'h' , 'i' , 'j' , 'k' , 'l', 'm' , 'n' , 'o' , 'p', 'q' , 'r' , 's' , 't' , 'u' , 'v' , 'x' , 'y' , 'z'];
+var upperCaseArr = ['A' , 'B', 'C' , 'D' , 'E' , 'F' , 'G' , 'H' , 'I' , 'J' , 'K' , 'L' , 'M' , 'k' , 'l' , 'M' , 'N' , 'P', 'U' , 'V' , 'W' , 'X' , 'Y' , 'Z'];
+ var numbersArr =  [0,1,2,3,4,5,6,7,8,9];
+
+
+ 
 
 
 function generatePassword(){
@@ -27,32 +30,41 @@ function generatePassword(){
         alert(" must choose at least one character set ");
      return false;
      }
+
       
     
 
 
-     
+      var options =[]
+      
+      
+      
+  
 
  
-    var options ="";
-    if(isSymbols){
-      var options = options.concat(specialCharacterArr)
-    }
-    if(isNumbers){
-      options = options.concat(numbersArr)
-    }
-    if(isUpperCase){
-      options = options.concat(upperCaseArr)
-    }
-    if(isLowerCase){
-      options = options.concat(lowerCaseArr)
-    }
+  if(isLowerCase && isNumbers && isSymbols && isUpperCase){
+    options = [].concat(specialCharacterArr[0],numbersArr[1],lowerCaseArr[1],upperCaseArr[2])
+  }
+    
+      if(isSymbols){
+         options = options.concat(specialCharacterArr)
+      }
+      if(isNumbers){
+        options = options.concat(numbersArr)
+      }
+      if(isUpperCase){
+        options = options.concat(upperCaseArr)
+      }
+      if(isLowerCase){
+        options = options.concat(lowerCaseArr)
+      }
+    
     var passwordLength = characterLength;
     var newPassword = "";
-    for(var i = 0; i < passwordLength; i++){
-            options = (Math.floor(Math.random()*newPassword.length));
-            newPassword += options;
-           }
+    for(var i = 0; i <passwordLength; i++){
+            newPassword  += options[Math.floor(Math.random()*newPassword.length)];
+            //  newPassword += options;
+            }
          return newPassword;
         }
       
@@ -75,3 +87,8 @@ function generatePassword(){
   
 
      
+     
+    
+    
+
+
