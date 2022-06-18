@@ -4,9 +4,7 @@
 
 _Chalange overview__
 
-```
-As a student at a coding bootcamp, I was presented with a homework challenge to complete the javascript code for a random secure password generator.
-```
+> As a coding bootcamp student, I am presented with the challenge of completing a javascript starter code.
 
 ## My task 
 
@@ -44,10 +42,10 @@ THEN the user  selects which criteria to include in the password.
 
  ✅If user selects  cancel on all confirm questions, then the user is alerted that they must choose at least one character type and asked to try again.
 
- WHEN all prompts are answered
+✅ WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria.
 
-WHEN the password is generated
+✅WHEN the password is generated
 THEN the password is written to the page
 
 [password Generator]( https://teshome28sara.github.io/Generate-password-challenge-)
