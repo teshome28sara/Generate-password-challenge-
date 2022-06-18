@@ -38,25 +38,11 @@ function generatePassword(){
       var options =[]
      
 
-      if(isLowerCase && isUpperCase){
-        options  = [].concat(lowerCaseArr[0], upperCaseArr[0]);
-      }
-      if(isNumbers && isSymbols)[
-        options = [].concat(numbersArr[0],specialCharacterArr[0])
-      ]
-      if(isNumbers && isUpperCase){
-        options = [].concat(numbersArr[0],upperCaseArr[0]);
-
-      }
-      if(isSymbols && isLowerCase){
-        options = [].concat(lowerCaseArr[0],specialCharacterArr[0]);
-      }
-      if(isNumbers && isLowerCase){
-        options = [].concat(lowerCaseArr[0] , numbersArr[0]);
-      }
-      if(isUpperCase && isSymbols){
-        options = [].concat(upperCaseArr[0], specialCharacterArr[0]);
-      }
+      
+    
+     
+     
+      
      
       
     
@@ -67,7 +53,7 @@ function generatePassword(){
 
  
   if(isLowerCase && isNumbers && isSymbols && isUpperCase){
-    options = [].concat(lowerCaseArr[0],numbersArr[0],upperCaseArr[0],specialCharacterArr[0])
+    options = [].concat(lowerCaseArr,numbersArr,upperCaseArr,specialCharacterArr)
   }
     
       if(isSymbols){
@@ -86,7 +72,7 @@ function generatePassword(){
     var passwordLength = characterLength;
     var newPassword = "";
     for(var i = 0; i <passwordLength; i++){
-            newPassword  += options[Math.floor(Math.random()*newPassword.length)];
+            newPassword  += options[Math.floor(Math.random()*options.length)];
             //  newPassword += options;
             }
          return newPassword;
