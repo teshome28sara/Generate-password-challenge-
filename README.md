@@ -1,8 +1,6 @@
 
-     [Password Generator]( https://teshome28sara.github.io/Generate-password-challenge-/)
 
-
-# Generate Password Challenge 03
+ # Generate Password Challenge 03
 
 _Chalange overview__
 
@@ -52,7 +50,7 @@ THEN a password is generated that matches the selected criteria.
 WHEN the password is generated
 THEN the password is written to the page
 
-
+[password Generator]( https://teshome28sara.github.io/Generate-password-challenge-)
 
 
 
