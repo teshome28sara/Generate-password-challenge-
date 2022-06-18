@@ -1,3 +1,7 @@
+
+     [Password Generator]( https://teshome28sara.github.io/Generate-password-challenge-/)
+
+
 # Generate Password Challenge 03
 
 _Chalange overview__
@@ -42,10 +46,10 @@ THEN the user  selects which criteria to include in the password.
 
  ✅If user selects  cancel on all confirm questions, then the user is alerted that they must choose at least one character type and asked to try again.
 
-✅ WHEN all prompts are answered
+ WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria.
 
-✅WHEN the password is generated
+WHEN the password is generated
 THEN the password is written to the page
 
 
